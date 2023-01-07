@@ -7,9 +7,7 @@ export default {
     args: {
         children: 'Create account'
     },
-    argTypes: {
-        
-    }
+    argTypes: {}
 } as Meta<ButtonProps>;
 
 // Variations
