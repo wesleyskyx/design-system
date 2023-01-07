@@ -10,6 +10,15 @@ export default {
     args: {
         children: 'Lorem ipsum.',
         size: 'md'
+    },
+    // Properties controls
+    argTypes: {
+        size: {
+            options: ['sm', 'md', 'lg'],
+            control: {
+                type: 'inline-radio'
+            }
+        }
     }
 } as Meta<TextProps>; // Get types
 
@@ -34,5 +43,12 @@ export const CustomComponent: StoryObj<TextProps> = {
         children: (
             <p>Testing</p>
         )
+    },
+    argTypes: {
+        children: {
+            table: {
+                disable: true
+            }
+        }
     }
 };
