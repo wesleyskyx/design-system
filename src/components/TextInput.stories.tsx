@@ -13,7 +13,13 @@ export default {
             <TextInput.Input placeholder="Type your email address" />
         ]
     },
-    argTypes: {}
+    argTypes: {
+        children: {
+            table: {
+                disable: true
+            }
+        }
+    }
 } as Meta<TextInputRootProps>;
 
 // Variations

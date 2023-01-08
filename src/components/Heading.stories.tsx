@@ -18,6 +18,11 @@ export default {
             control: {
                 type: 'inline-radio'
             }
+        },
+        asChild: {
+            table: {
+                disable: true
+            }
         }
     }
 } as Meta<HeadingProps>; // Get types
