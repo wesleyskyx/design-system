@@ -1,5 +1,4 @@
 import { Slot } from '@radix-ui/react-slot';
-import { clsx } from 'clsx';
 import { InputHTMLAttributes, ReactNode } from 'react';
 
 export interface TextInputRootProps {
@@ -31,9 +30,7 @@ function TextInputIcon(props: TextInputIconProps) {
 TextInputIcon.displayName = "TextInput.Icon";
 
 // extends Input html allows this component to receive all the properties an input has
-export interface TextInputInputProps extends InputHTMLAttributes<HTMLInputElement> {
-    placeholder?: string
-}
+export interface TextInputInputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
 function TextInputInput(props: TextInputInputProps) {
     return (
