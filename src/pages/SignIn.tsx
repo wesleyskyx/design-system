@@ -10,14 +10,19 @@ import { Logo } from "../Logo";
 
 export function SignIn() {
     const [isUserSignedIn, setIsUserSignedIn] = useState(false);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     async function handleSignIn(event: FormEvent) {
         event.preventDefault();
 
-        const response = await axios.post("/sessions", {
-            email: "wesley@test.com",
-            password: 12345678
-        })
+        const data = {
+            email,
+            password
+        }
+
+        console.log(data);
+        const response = await axios.post("/sessions", data);
         console.log(response.data);
         setIsUserSignedIn(true);
     }
@@ -44,7 +49,7 @@ export function SignIn() {
                 <TextInput.Icon>
                     <Envelope />
                 </TextInput.Icon>
-                <TextInput.Input id="email" type="email" placeholder='Digite seu e-mail'>
+                <TextInput.Input value={email} onChange={(ev) => setEmail(ev.target.value)} id="email" type="email" placeholder='Digite seu e-mail'>
     
                 </TextInput.Input>
                 </TextInput.Root>
@@ -56,7 +61,7 @@ export function SignIn() {
                 <TextInput.Icon>
                     <Lock />
                 </TextInput.Icon>
-                <TextInput.Input id="password" type="password" placeholder='******'>
+                <TextInput.Input value={password} onChange={(ev) => setPassword(ev.target.value)} id="password" type="password" placeholder='******'>
     
                 </TextInput.Input>
                 </TextInput.Root>
